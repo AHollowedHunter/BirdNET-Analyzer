@@ -10,9 +10,12 @@ RUN pip3 install numpy scipy librosa bottle
 # Install Tensforflow
 RUN pip3 install tensorflow 
 
+# Install bottle for server
+RUN pip3 install bottle
+
 # Import all scripts
 COPY . ./
 
 # Add entry point to run the script
 ENTRYPOINT [ "python3" ]
-CMD [ "analyze.py" ]
+CMD [ "server.py" ]
